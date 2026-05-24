@@ -57,7 +57,7 @@ public class TodoService {
         System.out.println("Segunda prueba");
         System.out.println("Tercera prueba");
         System.out.println("Cambio para un PR");
-
+        return toResponse(saved);
     }
 
     @Transactional
