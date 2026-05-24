@@ -28,6 +28,7 @@ public class GlobalExceptionHandler {
                 .getFieldErrors().stream()
                 .map(fe -> new ErrorResponse.FieldViolation(fe.getField(), fe.getDefaultMessage()))
                 .toList();
+        System.out.println("Otro cambio random cualquiera");
         ErrorResponse body = ErrorResponse.withFieldErrors(
                 HttpStatus.BAD_REQUEST.value(), "Bad Request", "Validation failed", violations);
         return ResponseEntity.badRequest().body(body);
