@@ -40,7 +40,8 @@ public class TodoController {
     @PostMapping
     public ResponseEntity<TodoResponse> create(@Valid @RequestBody TodoCreateRequest request) {
         TodoResponse created = todoService.create(request);
-
+        return ResponseEntity.created(URI.create("/api/todos/" + created.id())).body(created);
+    }
 
     @PutMapping("/{id}")
     public TodoResponse update(@PathVariable Long id,
